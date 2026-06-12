@@ -49,6 +49,7 @@ console.log("[ SECTION A — Variables & Math ]")
 // EXPLAIN: What is the difference between let and const?
 //          Write your answer as a comment below.
 //
+//          answer:
 
 
 // A4.
@@ -59,6 +60,7 @@ console.log("[ SECTION A — Variables & Math ]")
 // EXPLAIN: What does the % operator return?
 //          Why is it useful for checking even/odd?
 //
+//          answer:
 
 
 // ------------------------------------------------------------
@@ -67,11 +69,11 @@ console.log("[ SECTION A — Variables & Math ]")
 console.log("\n[ SECTION B — Strings ]")
 
 
-// The following string is provided for this section.
+// The following string is provided for this section. You may use methods or compute manually.
 const rawInput = "   JavaScript is AWESOME   "
 
 // B1.
-// Log the string with all leading and trailing spaces removed.
+// Log the string with all leading and trailing spaces removed (extra spaces in front and end of the text).
 
 
 // B2.
@@ -97,10 +99,11 @@ const rawInput = "   JavaScript is AWESOME   "
 //
 // EXPLAIN: What does .split() do? What argument did you pass it and why?
 //
+//        answer: 
 
 
 // ------------------------------------------------------------
-// SECTION C — Arrays
+// SECTION C — Arrays (reference to array methods: https://www.w3schools.com/jsref/jsref_obj_array.asp)
 //
 // Each task tells you exactly what to use — a loop, a method, or a property.
 // Use what is specified. Do not substitute one for another.
@@ -163,6 +166,7 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 // EXPLAIN: What does .map() return? What does .filter() return?
 //          How are they different?
 //
+//          answer:
 
 
 
@@ -211,7 +215,7 @@ const student = {
 //          Give an example of when you would need to use bracket notation
 //          instead of dot notation.
 //
-
+//          answer:
 
 // ------------------------------------------------------------
 // SECTION E — Arrays of Objects
@@ -223,7 +227,7 @@ console.log("\n[ SECTION E — Arrays of Objects ]")
 const roster = [
   { name: "Alex",  grade: 92, present: true  },
   { name: "Jamie", grade: 74, present: false },
-  { name: "Morgan",grade: 88, present: true  },
+  { name: "Jane",grade: 88, present: true  },
   { name: "Riley", grade: 61, present: true  },
   { name: "Casey", grade: 95, present: false }
 ]
@@ -251,6 +255,7 @@ const roster = [
 //          What problem does that structure solve compared to
 //          storing everything in separate variables?
 //
+//          answer:
 
 
 // ------------------------------------------------------------
@@ -278,6 +283,7 @@ console.log(square(9))   // → 81
 // EXPLAIN: What does the return keyword do?
 //          What does a function return if you forget to write return?
 //
+//          answer:
 
 
 // F3.
@@ -315,6 +321,7 @@ myForEach([1, 2, 3], function(n) {
 // EXPLAIN: What is a callback function?
 //          In the example above, what plays the role of the callback?
 //
+//          answer:
 
 
 // F6.
@@ -340,3 +347,4 @@ console.log(myFilter([10, 25, 30, 45], n => n % 2 === 0))   // → [10, 30]
 //          What is the key difference between what they return?
 //          Why do neither of them change the original array?
 //
+//          answer:
