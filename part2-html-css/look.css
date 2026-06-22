@@ -73,4 +73,55 @@
            Write your answer as a comment below these two rules.
 
            answer:
+
+
+           I put my code below cause it was easier
 */
+
+body {
+  background-color: lightgray;
+}
+
+h1 {
+  font-size: 36px;
+  color: navy;
+}
+
+.highlight {
+  background-color: yellow;
+  padding: 8px;
+}
+
+#section-title {
+  color: green;
+}
+
+#box {
+  width: 200px;
+  height: 60px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 20px;
+}
+
+/* Padding is space inside the border.
+   Margin is space outside the border. */
+
+#click-me {
+  background-color: blue;
+  color: white;
+  border: 1px solid navy;
+  padding: 10px;
+  cursor: pointer;
+}
+
+p {
+  color: steelblue;
+}
+
+#intro {
+  color: tomato;
+}
+
+/* Answer for questions above : The id rule wins because an id is more specific than a tag.
+   Specificity decides which CSS rule has higher priority. */

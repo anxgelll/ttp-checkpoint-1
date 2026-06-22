@@ -30,39 +30,34 @@
 console.log("[ SECTION A — Variables & Math ]")
 
 
-// A1.
-// Declare a variable using const and assign it the number 100.
-// Declare a variable using let and assign it the number 45.
-// Log both.
+const firstNumber = 100
+let secondNumber = 45
 
+console.log(firstNumber)
+console.log(secondNumber)
 
-// A2.
-// Using only those two variables, write a single expression that adds them,
-// subtracts 20, multiplies by 2, and divides by 5.
-// Log the result.
+const answer = ((firstNumber + secondNumber - 20) * 2) / 5
+console.log(answer)
 
+secondNumber = 50
+console.log(secondNumber)
 
-// A3.
-// Reassign your let variable to a different number. Log it.
-// Now try to reassign your const variable. What happens?
-//
-// EXPLAIN: What is the difference between let and const?
-//          Write your answer as a comment below.
-//
-//          answer:
+// firstNumber = 200
+// This causes an error because a const cannot be reassigned.
 
+// answer: let can be changed later. const cannot be reassigned.
 
-// A4.
-// Using the % operator, write an expression that tells you
-// whether the number 47 is even or odd.
-// Log the result and a message that says "even" or "odd".
-//
-// EXPLAIN: What does the % operator return?
-//          Why is it useful for checking even/odd?
-//
-//          answer:
+const remainder = 47 % 2
+console.log(remainder)
 
+if (remainder === 0) {
+  console.log("even")
+} else {
+  console.log("odd")
+}
 
+// answer: The % operator gives the remainder after division.
+// Even numbers have a remainder of 0 when divided by 2.
 // ------------------------------------------------------------
 // SECTION B — Strings (reference to string methods: https://www.w3schools.com/jsref/jsref_obj_string.asp)
 // ------------------------------------------------------------
@@ -74,32 +69,33 @@ const rawInput = "   JavaScript is AWESOME   "
 
 // B1.
 // Log the string with all leading and trailing spaces removed (extra spaces in front and end of the text).
-
+console.log(rawInput.trim())
 
 // B2.
 // Log the string converted to all lowercase.
-
+console.log(rawInput.toLowerCase())
 
 // B3.
 // Log the number of characters in rawInput (including spaces).
-
+console.log(rawInput.length)
 
 // B4.
 // Log whether rawInput contains the word "awesome" (lowercase).
 // It should return true.
-
+console.log(rawInput.toLowerCase().includes("awesome"))
 
 // B5.
 // Log the first 10 characters of rawInput.
-
+console.log(rawInput.slice(0, 10))
 
 // B6.
 // Split rawInput (after trimming it) into an array of individual words.
 // Log the resulting array.
-//
+console.log(rawInput.trim().split(" "))
 // EXPLAIN: What does .split() do? What argument did you pass it and why?
 //
-//        answer: 
+//        answer: It turns a string into an array.
+//        I passed a space because spaces separate the words.
 
 
 // ------------------------------------------------------------
@@ -117,56 +113,66 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 // C1.
 // Log the first score. Log the last score.
 // Do not hardcode the index for the last one.
+console.log(scores[0], scores[scores.length - 1])
 
 
 // C2.
 // Log the total number of scores we see in the array.
+console.log(scores.length)
 
 
 // C3.
 // Use a method to mutate and add the number 78 to the end of the array.
 // Log the updated array.
-
+scores.push(78)
+console.log(scores)
 
 // C4.
 // Use a method to log the index of the score 95.
 // Log the index.
-
-
+console.log(scores.indexOf(95))
+// so this will output the index which is 2.
 // C5.
 // Use a method to log whether the array includes the score 50.
 // Log the boolean value.
-
+console.log(scores.includes(50))
 
 // C6.
 // Use a for loop to log each score on its own line.
 // Do not modify the original scores array.
-
+for (let money = 0; money < scores.length; money++) {
+  console.log(scores[money])
+}
 
 // C7.
 // Use .forEach() to log each score on its own line.
 // Do not modify the original scores array.
+scores.forEach(score => console.log(score))
 //
 // EXPLAIN: What is the difference between a for loop and forEach?
 //          Is one better than the other?
-//
-
+// answer: The method forEach is a method thats built in, while the for loop is a general thing thats inside the programming, its used in more general terms
+//answer: is one better than the other? I dont think so, its dependant on the context of what you are doing, one might be more efficient than the other in different scenarios
 
 // C8.
 // Use .filter() to create a new array containing only the scores above 80.
 // Log the new result array.
 // Do not modify the original scores array.
-
+console.log(scores.filter(score => score > 80))
+// thought I needed a loop but I think this will work regardless
 
 // C9.
 // Use .map() to create a new array where every score is multiplied by 2.
 // Log the new result array.
 // Do not modify the original scores array.
 //
+
+
+console.log(scores.map(score => score * 2))
 // EXPLAIN: What does .map() return? What does .filter() return?
 //          How are they different?
 //
-//          answer:
+//          answer: .map() returns an array of that has the same length as the original, but it has changed into different values. but filter just leaves the area with possibly different length depending on what the filter number or value is
 
 
 
@@ -188,34 +194,40 @@ const student = {
 // D1.
 // Log the value of name using dot notation.
 // Log the value of city using bracket notation.
-
+console.log(student.name, student["city"])
 
 // D2.
 // Add a new key called grade and set it to "B+".
 // Log the updated object.
+student.grade = "B+";
+console.log(student);
 
 
 // D3.
 // Use a method to log all of the keys in the object.
-
+console.log(Object.keys(student))
 
 // D4.
 // Use a method to log all of the values in the object.
-
+console.log(Object.values(student))
 
 // D5.
 // Using a for...in loop, log each key-value pair in this exact format:
 //   name: Jane
 //   age: 21
 //   (etc.)
-
+for (let key in student) {
+  console.log(`${key}: ${student[key]}`)
+}
 
 // D6.
 // EXPLAIN: What is the difference between dot notation and bracket notation?
 //          Give an example of when you would need to use bracket notation
 //          instead of dot notation.
 //
-//          answer:
+//          answer: Dot notation uses the property name directly, like student.name.
+//          Bracket notation uses a string, like student["name"].
+//          Brackets are useful when the property name is stored in a variable.
 
 // ------------------------------------------------------------
 // SECTION E — Arrays of Objects
@@ -234,30 +246,30 @@ const roster = [
 
 // E1.
 // Log the name of the third student.
+console.log(roster[2].name) // it would [2] because index starts at 0 since its an array
 
+roster.forEach(function(person) {
+  if (person.present === true) {
+    console.log(person.name)
+  }
+})
 
-// E2.
-// Using forEach, log the name of every student who is present.
+const passingStudents = roster.filter(function(person) {
+  return person.grade >= 70
+})
 
+passingStudents.forEach(function(person) {
+  console.log(person.name + ": " + person.grade)
+})
 
-// E3.
-// Create a new array containing only the students who passed (grade >= 70).
-// Log each passing student's name and grade.
+const studentNames = roster.map(function(person) {
+  return person.name
+})
+console.log(studentNames)
 
-
-// E4.
-// Create a new array of just the names of all students (no other data).
-// Log the result array.
-
-
-// E5.
-// EXPLAIN: Why would you store objects inside an array?
-//          What problem does that structure solve compared to
-//          storing everything in separate variables?
-//
-//          answer:
-
-
+// answer: An array lets us keep a group of students together.
+// Each object keeps one student's information together.
+// This is easier than creating separate variables for every value.
 // ------------------------------------------------------------
 // SECTION F — Functions
 //
@@ -269,7 +281,11 @@ console.log("\n[ SECTION F — Functions ]")
 // F1.
 // Write a function called greet that takes a name as an argument
 // and returns a greeting string.
+function greet(name) {
+  return "Hello, " + name + "!"
+}
 //
+
 console.log(greet("Alex"))   // → "Hello, Alex!"
 console.log(greet("Mike"))   // → "Hello, Mike!"
 
@@ -277,19 +293,28 @@ console.log(greet("Mike"))   // → "Hello, Mike!"
 // F2.
 // Write a function called square that takes a number and returns its square.
 //
+function square(number) {
+  return number * number
+}
+
 console.log(square(4))   // → 16
 console.log(square(9))   // → 81
 //
 // EXPLAIN: What does the return keyword do?
 //          What does a function return if you forget to write return?
 //
-//          answer:
+//          answer: return sends a value back from a function.
+//          Without return, a function returns undefined.
 
 
 // F3.
 // Write a function called isEven that takes a number and returns
 // true if it is even and false if it is odd.
 //
+function isEven(number) {
+  return number % 2 === 0
+}
+
 console.log(isEven(4))   // → true
 console.log(isEven(7))   // → false
 console.log(isEven(0))   // → true
@@ -300,6 +325,16 @@ console.log(isEven(0))   // → true
 // and returns the total of all the numbers added together.
 // Use a loop inside — do not use a built-in method.
 //
+function sum(numbers) {
+  let total = 0
+
+  for (let i = 0; i < numbers.length; i++) {
+    total = total + numbers[i]
+  }
+
+  return total
+}
+
 console.log(sum([1, 2, 3, 4, 5]))   // → 15
 console.log(sum([10, 20, 30]))       // → 60
 console.log(sum([]))                 // → 0
@@ -311,6 +346,12 @@ console.log(sum([]))                 // → 0
 // It should not return anything.
 // Do not use the native .forEach() inside your function — use a for loop.
 //
+function myForEach(array, callback) {
+  for (let i = 0; i < array.length; i++) {
+    callback(array[i])
+  }
+}
+
 myForEach([1, 2, 3], function(n) {
   console.log(n)
 })
@@ -321,7 +362,8 @@ myForEach([1, 2, 3], function(n) {
 // EXPLAIN: What is a callback function?
 //          In the example above, what plays the role of the callback?
 //
-//          answer:
+//          answer: A callback is a function passed into another function.
+//          In the example, function(n) is the callback.
 
 
 // F6.
@@ -330,6 +372,16 @@ myForEach([1, 2, 3], function(n) {
 // calling the callback on the original element.
 // Do not use the native .map() inside your function — use a for loop.
 //
+function myMap(array, callback) {
+  const newArray = []
+
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(callback(array[i]))
+  }
+
+  return newArray
+}
+
 console.log(myMap([1, 2, 3], (n) => n * 2))    // → [2, 4, 6]
 console.log(myMap([1, 2, 3], (n) => n + 10))   // → [11, 12, 13]
 
@@ -340,6 +392,18 @@ console.log(myMap([1, 2, 3], (n) => n + 10))   // → [11, 12, 13]
 // the callback returns true.
 // Do not use the native .filter() inside your function — use a for loop.
 //
+function myFilter(array, callback) {
+  const newArray = []
+
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i]) === true) {
+      newArray.push(array[i])
+    }
+  }
+
+  return newArray
+}
+
 console.log(myFilter([1, 2, 3, 4, 5], n => n > 3))          // → [4, 5]
 console.log(myFilter([10, 25, 30, 45], n => n % 2 === 0))   // → [10, 30]
 //
@@ -347,4 +411,6 @@ console.log(myFilter([10, 25, 30, 45], n => n % 2 === 0))   // → [10, 30]
 //          What is the key difference between what they return?
 //          Why do neither of them change the original array?
 //
-//          answer:
+//          answer: myMap and myFilter both use callbacks and return new arrays.
+//          myMap changes every item. myFilter keeps items that pass a test.
+//          They do not change the original array because they make new arrays.

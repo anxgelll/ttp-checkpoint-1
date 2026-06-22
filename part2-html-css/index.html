@@ -54,10 +54,45 @@
         Both rules target the same paragraph.
         Which color will the paragraph actually be? Why does one rule win?
 
-        Answer:
+        Answer: The paragraph will be tomato because an id selector is more specific than a tag selector.
 
 -->
 
 <!-- ============================================================ -->
 <!-- Write your complete HTML page starting below this line      -->
 <!-- ============================================================ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Checkpoint Page</title>
+    <link rel="stylesheet" href="look.css">
+    <!-- The stylesheet goes in the head so it loads before the page is shown. -->
+  </head>
+
+  <body>
+    <h1>My Checkpoint Page</h1>
+
+    <p id="intro">
+      I am learning HTML, CSS, and JavaScript. I enjoy building webpages and seeing my work in the browser.
+    </p>
+
+    <h2 id="section-title">Things I Am Learning</h2>
+
+    <!-- A class can be shared by more than one element.
+         An id should only belong to one element.
+         Two elements can share a class, but should not share an id. -->
+    <ul>
+      <li class="highlight">HTML</li>
+      <li>CSS</li>
+      <li class="highlight">JavaScript</li>
+      <li>The DOM</li>
+    </ul>
+
+    <div id="box">Practice helps me improve.</div>
+
+    <button id="click-me">Click Me</button>
+  </body>
+</html>
